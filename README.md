@@ -7,7 +7,7 @@
 
 <H1>About Me:</H1>
 
-*I'm Nathanael, a Network Technician and IT enthusiest. I enjoy computers, video games, and tinkering with machines. I somewhat always knew my interests were in Information Technology, but didn't find my professional passion until working as a 25N in the Army. I play a lot of video games from lots of genres, we don't need to worry about how many tens of thousands of dollars I've put into my library of games. When it comes to 'machines' I really mean ANY machine from Cars to TVs. Technology as a whole is my true love.*
+*I'm Nathanael, a Network Technician and IT enthusiast. I enjoy computers, video games, and tinkering with machines. I somewhat always knew my interests were in Information Technology, but didn't find my professional passion until working as a 25N (Nodal Network Systems Operator-Maintainer) in the Army. I play a lot of video games from lots of genres, we don't need to worry about how many tens of thousands of dollars I've put into my library of games. When it comes to 'machines' I really mean ANY machine from Cars to TVs. Technology as a whole is my true love.*
 
 <H2>Websites I HIGHLY suggest visiting:</H2>
 
