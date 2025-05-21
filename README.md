@@ -7,7 +7,7 @@
 
 <H1>About Me:</H1>
 
-*I'm Nathanael, a Network Technician and IT enthusiast. I enjoy computers, video games, and tinkering with machines. I somewhat always knew my interests were in Information Technology, but didn't find my professional passion until working as a 25N (Nodal Network Systems Operator-Maintainer) in the Army. I play a lot of video games from lots of genres, we don't need to worry about how many tens of thousands of dollars I've put into my library of games. When it comes to 'machines' I really mean ANY machine from Cars to TVs. Technology as a whole is my true love.*
+*I'm Nathanael, a Network Technician and IT enthusiast. I somewhat always knew my interests were in Information Technology, but didn't find my professional passion until working as a 25N (Nodal Network Systems Operator-Maintainer) in the Army. It was at that point I knew that Switches and Routers were what I was going to work with in my career. When I'm not working I enjoy messing around with computers, playing video games, and tinkering with machines. I play a lot of video games from lots of genres, we don't need to worry about how many tens of thousands of dollars I've put into my library of games. When it comes to 'machines' I really do mean ANY machine from Cars to TVs. I've even worked on assembling my own 2 Stroke Engine in the past.*
 
 <H2>Websites I HIGHLY suggest visiting:</H2>
 
