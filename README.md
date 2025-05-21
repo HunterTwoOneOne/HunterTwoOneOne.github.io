@@ -13,11 +13,11 @@
 
 <a href="https://archive.org/"> Internet Archive </a>
 
-**It's my go-to for software that has long since been abandoned, also called Abandonware. Their efforts for digital preservation are commendable, to say nothing of their general use for an End User. They're a host for all sorts of archived content from snapshots of Webpages, old software, and even media such as books, music, and videos.**
+**It's my go-to for software that has long since been abandoned, also called Abandonware. Their efforts for digital preservation are commendable, to say nothing of their general use for an End User. They're a host for all sorts of archived content from snapshots of Webpages, old software, and even media such as books, music, and videos. With documenting history for future generations being such an important part of the human existance, there's only two tools to keep in mind. <a href="https://www.wikipedia.org/"> Wikipedia </a> is great if you want information about the history of the world and Internet Archive is great if you want to see the history of the Internet. In the information age, services like Archive.org are invaluable.**
 
 <a href="https://www.speedtest.net"> Ookla Speed Test </a>
 
-**As a Network professional, this website is an invaluable tool. I tell pretty much everybody who's having issues with their WiFi or Ethernet connections to run a speed test, and this is one of the best. It's very simple to use and reasonably accurate for general quick checks of connectivity to the Internet. Ookla offers more than just their speed test tool as they are also the company behind the <a href="https://downdetector.com/"> Down Detector </a> service.**
+**As a Network professional, this website is an invaluable tool. I tell pretty much everybody who's having issues with their WiFi or Ethernet connections to run a speed test, and this is one of the best. It's very simple to use and reasonably accurate for general quick checks of connectivity to the Internet. Ookla offers more than just their speed test tool as they are also the company behind the <a href="https://downdetector.com/"> Down Detector </a> service. If you're an aspiring Network Technician/Engineer, you can benefit greatly from Ookla's website and mobile App. There's almost no other service that competes with Ookla when it comes to reliability and quality in this niche.**
 
 <a href="https://steamdb.info/"> Steam DB </a>
 
