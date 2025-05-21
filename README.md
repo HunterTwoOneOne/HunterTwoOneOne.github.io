@@ -13,8 +13,8 @@
 
 <a href="https://archive.org/"> Internet Archive </a>
 
-**It's my go-to for software that has long since been abandoned, also called Abandonware. Their efforts for digital preservation are commendable, to say nothing of their general use for an End User.**
+**It's my go-to for software that has long since been abandoned, also called Abandonware. Their efforts for digital preservation are commendable, to say nothing of their general use for an End User. They're a host for all sorts of archived content from snapshots of Webpages, old software, and even media such as books, music, and videos.**
 
 <a href="https://www.speedtest.net"> Ookla Speed Test </a>
 
-**As a Network professional, this website is an invaluable tool. I tell pretty much everybody who's having issues with their WiFi or Ethernet connections to run a speed test, and this is one of the best. It's very simple to use and reasonably accurate for general quick checks of connectivity to the Internet.**
+**As a Network professional, this website is an invaluable tool. I tell pretty much everybody who's having issues with their WiFi or Ethernet connections to run a speed test, and this is one of the best. It's very simple to use and reasonably accurate for general quick checks of connectivity to the Internet. Ookla offers more than just their speed test tool as they are also the company behind the Down Detector <a href="https://downdetector.com/"> Down Detector </a> service.**
