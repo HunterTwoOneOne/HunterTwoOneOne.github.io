@@ -1,6 +1,8 @@
 # HunterTwoOneOne.github.io
 *Long, Nathanael H. || For Comments, Questions, & Concerns -- nathanaellong@nathanaellong.com*
 
+The nathanaellong.com mailbox is not regularly monitored. Please do not expect a swift reply.
+
 ***This is my personal account, however this repository is specific for my course at Wake Tech.***
 
 **Contents are for my CTI110 related course work, please disregard as training material.**
