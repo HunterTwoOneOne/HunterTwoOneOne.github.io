@@ -1,5 +1,5 @@
 # HunterTwoOneOne.github.io
-*Long, Nathanael H. || For Comments, Questions, & concerns - nathanaellong@nathanaellong.com*
+*Long, Nathanael H. || For Comments, Questions, & Concerns -- nathanaellong@nathanaellong.com*
 
 ***This is my personal account, however this repository is specific for my course at Wake Tech.***
 
