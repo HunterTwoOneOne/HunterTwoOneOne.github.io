@@ -18,3 +18,7 @@
 <a href="https://www.speedtest.net"> Ookla Speed Test </a>
 
 **As a Network professional, this website is an invaluable tool. I tell pretty much everybody who's having issues with their WiFi or Ethernet connections to run a speed test, and this is one of the best. It's very simple to use and reasonably accurate for general quick checks of connectivity to the Internet. Ookla offers more than just their speed test tool as they are also the company behind the <a href="https://downdetector.com/"> Down Detector </a> service.**
+
+<a href="https://steamdb.info/"> Steam DB </a>
+
+**Being as big a fan of gaming as I am, I would be remiss not to put forward one of the best 3rd Party tools in PC gaming, Steam DB. Their offering of player counts is super helpful in checking if an online game has an active playerbase, viewing upcoming game releases, and a fun little tool to offer a random game you own as a suggestion for what to play. For users deep into modding their games, the ability to find old Depot information to pull an older verion of a game to your machine is invaluable. Everyone who plays games on PC should at least check out Steam DB once.**
