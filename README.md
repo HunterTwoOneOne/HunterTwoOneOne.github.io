@@ -5,7 +5,7 @@ The nathanaellong.com mailbox is not regularly monitored. Please do not expect a
 
 ***This is my personal account, however this repository is specific for my course at Wake Tech.***
 
-**Contents are for my CTI110 related course work, please disregard as training material.**
+**Contents are for my CTI110 related course work. This is not a professional portfolio, and should be treated as part of my means to learn about GitHub rather than as a showcase of my skillset.**
 
 <H1>About Me:</H1>
 
