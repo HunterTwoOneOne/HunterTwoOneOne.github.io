@@ -6,6 +6,8 @@
 
 ***For more information about <a href="https://en.wikipedia.org/wiki/OSI_model"> The OSI Model </a> use the link provided to the Wikipedia page on the subject.***
 
+*The OSI Model is critical to all Network professionals, as it is one of the tools used for fixing problems we encounter on a day to day basis in our work. This Flowchart is effectively the slow way of troubleshooting an issue though, as in the field, you may not even check certain layers as the available information around the outage or disruption can already indicate a likely cause. By the book, you're supposed to go as the flow chart shows. It may not be correct as the Certifications would like professionals to operate, but as you gain expereince, you often will not need to check things you're able to rule out.*
+
 
 ```mermaid
 ---
