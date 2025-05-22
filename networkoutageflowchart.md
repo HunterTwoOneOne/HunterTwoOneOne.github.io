@@ -4,6 +4,9 @@
 
 **At each junction, having found or not found the issue, the next step is clear. Correct the issue if it is found, or move to the next layer. The OSI Model is very clear about the process as if the issue isn't at the cables and power, it's more in depth and you check data transmission as the cause next. This carries on until you've expended pretty much all options BUT the final layer, the Application Layer and you're likely dealing with a service issue or a poorly functioning End User machine.**
 
+***For more information about <a href="https://en.wikipedia.org/wiki/OSI_model"> The OSI Model </a> use the link provided to the Wikipedia page on the subject.***
+
+
 ```mermaid
 ---
 config:
