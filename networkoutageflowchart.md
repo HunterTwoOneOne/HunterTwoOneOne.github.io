@@ -32,3 +32,5 @@ flowchart TD
     n2["Assumes there is a limit to Net Ops desire to Troubleshoot. This is only half serious, please take this as unseriously as possible."]
     Q@{ shape: rect}
     n2@{ shape: text}
+
+**Flowchart is intended to be taken very unseriously. Further depth on WHAT the checking of Layers intails is not present. Process is simply to follow the OSI Model from Layer to Layer either finding the issue or not and taking actions based on the findings. Generally, once at the 7th Layer, AKA the Application Layer, the Network Team should be passing along the findings to the Help Desk as this is the Layer that End Users are at. Obviously, if you are fixing this issue in the real world and have troubleshooted the problem all the way to Layer you're probably not going to just give up and pass the problem to the Help Desk, you'll fix it for them and document the findings.**
