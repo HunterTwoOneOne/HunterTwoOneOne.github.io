@@ -16,27 +16,36 @@ config:
 ---
 flowchart TB
     A(["Network Issue Begins"]) --- B["Check Layer 1 Status"]
-    B e1@--> C["No Issues at Layer 1"] & D["Issue found at the Physical Layer"]
+    B e1@--> C["No Issues at Layer 1"]
+B e25@--> D["Issue found at the Physical Layer"]
     D e2@--> I((("Fix the Problem")))
     C e3@--> E["Check Layer 2 Status"]
-    E e4@--> G["No Issues at Layer 2"] & F["Issue found at the Data Link Layer"]
+    E e4@--> G["No Issues at Layer 2"]
+E e26@--> F["Issue found at the Data Link Layer"]
     F e5@--> I
     G e6@--> J["Check Layer 3 Status"]
-    J e7@--> L["No Issues at Layer 3"] & K["Issue at the Network Layer Found"]
+    J e7@--> L["No Issues at Layer 3"] 
+J  e27@--> K["Issue at the Network Layer Found"]
     K e8@--> I
     L e9@--> N["Check Layer 4 Status"]
-    N e10@--> O["No Issues at Layer 4"] & P["Issue found at the Transport Layer"]
+    N e10@--> O["No Issues at Layer 4"] 
+N e28@--> P["Issue found at the Transport Layer"]
     P e11@--> I
     O e12@--> H["Check Layer 5 Status"]
     H e13@--> M{" CONSIDER blaming the End User"}
-    M e14@--> Q@{ label: "Be nice and don't blame the End User" } & R["Blame the End User"]
+    M e14@--> Q@{ label: "Be nice and don't blame the End User" } 
+M e29@--> R["Blame the End User"]
     R e15@--> S["Submit Ticket for Help Desk for Investigation"]
-    Q e16@--> T["Issue Found at the Session Layer"] & U["No Issues at Layer 5"]
-    T e17@--> I & V["Notify Help Desk of the Issue and Correction Used"]
+    Q e16@--> T["Issue Found at the Session Layer"]
+Q e30@--> U["No Issues at Layer 5"]
+    T e17@--> I
+T e24@--> V["Notify Help Desk of the Issue and Correction Used"]
     U e18@--> Y["Check Layer 6 Status"]
     I e19@--> X["Document actions taken"]
-    Y e20@--> Z["Issue Found at the Presentation Layer"] & AA["No Issue Found at Layer 6"]
-    Z e21@--> I & V
+    Y e20@--> Z["Issue Found at the Presentation Layer"]
+Y e31@--> AA["No Issue Found at Layer 6"]
+    Z e21@--> I
+Z e32@--> V
     AA e22@--> W{{"Issue Falls Outside Net Ops Jurisdiction, Submit Ticket to Help Desk for Investigation"}}
     W e23@--> X
     n1["OSI Model Network Troubleshooting Flowchart"]
@@ -66,3 +75,12 @@ flowchart TB
     e21@{ animate: true }
     e22@{ animate: true }
     e23@{ animate: true }
+e24@{ animate: true }
+e25@{ animate: true }
+e26@{ animate: true }
+e27@{ animate: true }
+e28@{ animate: true }
+e29@{ animate: true }
+e30@{ animate: true }
+e31@{ animate: true }
+e32@{ animate: true }
