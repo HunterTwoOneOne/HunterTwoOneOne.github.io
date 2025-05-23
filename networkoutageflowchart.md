@@ -1,6 +1,22 @@
 <H1> A Network Outage Troubleshooting Flowchart </H1>
 
-**This is intended to be taken very unseriously. Further depth on WHAT the checking of Layers intails is not present. Process is simply to follow the OSI Model from Layer to Layer either finding the issue or not and taking actions based on the findings. Generally, once at the 7th Layer, AKA the Application Layer, the Network Team should be passing along the findings to the Help Desk as this is the Layer that End Users are at. Obviously, if you are fixing this issue in the real world and have troubleshooted the problem all the way to Layer you're probably not going to just give up and pass the problem to the Help Desk, you'll fix it for them and document the findings.**
+**This is intended to be taken very unseriously. Process is simply to follow the OSI Model from Layer to Layer either finding the issue or not and taking actions based on the findings. Generally, once at the 7th Layer, AKA the Application Layer, the Network Team should be passing along the findings to the Help Desk as this is the Layer that End Users are at. Obviously, if you are fixing this issue in the real world and have troubleshooted the problem all the way to Layer you're probably not going to just give up and pass the problem to the Help Desk, you'll fix it for them and document the findings.**
+
+**Let’s really quick break down the Layers of the OSI Model. This will help if you want to consider the items being checked in the process. This is very simplified and should not be taken as though it is all encompassing.**
+
+*Layer 1 deals with Cables and Power States of hardware*
+
+*Layer 2 deals with Switches*
+
+*Layer 3 deals with Routers*
+
+*Layer 4 deals with communication protocols like TCP & UDP*
+
+*Layer 5 deals with starting/stopping/managing connections*
+
+*Layer 6 deals with visualization and encryption*
+
+*Layer 7 deals with software such as browsers & email clients or can be the End User devices like a phone or laptop*
 
 **At each junction, having found or not found the issue, the next step is clear. Correct the issue if it is found, or move to the next layer. The OSI Model is very clear about the process as if the issue isn't at the cables and power, it's more in depth and you check data transmission as the cause next. This carries on until you've expended pretty much all options BUT the final layer, the Application Layer, and you're likely dealing with a service issue or a poorly functioning End User machine. The final part of the chart is to document everything. This is important in the field in the case of you wanting to go back and see what you did or another person wants to see what was done. Good written explanations of your troubleshooting can be** *VERY* **important if you have to report to somebody on the issue so you have material to refer to.**
 
