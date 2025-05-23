@@ -16,30 +16,31 @@ config:
 ---
 flowchart TB
     A(["Network Issue Begins"]) --- B["Check Layer 1 Status"]
-    B --> C["No Issues at Layer 1"] & D["Issue found at the Physical Layer"]
-    D --> I((("Fix the Problem")))
-    C --> E["Check Layer 2 Status"]
-    E --> G["No Issues at Layer 2"] & F["Issue found at the Data Link Layer"]
-    F --> I
-    G --> J["Check Layer 3 Status"]
-    J --> L["No Issues at Layer 3"] & K["Issue at the Network Layer Found"]
-    K --> I
-    L --> N["Check Layer 4 Status"]
-    N --> O["No Issues at Layer 4"] & P["Issue found at the Transport Layer"]
-    P --> I
-    O --> H["Check Layer 5 Status"]
-    H --> M{" CONSIDER blaming the End User"}
-    M --> Q@{ label: "Be nice and don't blame the End User" } & R["Blame the End User"]
-    R --> S["Submit Ticket for Help Desk for Investigation"]
-    Q --> T["Issue Found at the Session Layer"] & U["No Issues at Layer 5"]
-    T --> I & V["Notify Help Desk of the Issue and Correction Used"]
-    U --> Y["Check Layer 6 Status"]
-    I --> X["Document actions taken"]
-    Y --> Z["Issue Found at the Presentation Layer"] & AA["No Issue Found at Layer 6"]
-    Z --> I & V
-    AA --> W{{"Issue Falls Outside Net Ops Jurisdiction, Submit Ticket to Help Desk for Investigation"}}
-    W --> X
+    B e1@--> C["No Issues at Layer 1"] & D["Issue found at the Physical Layer"]
+    D e1@--> I((("Fix the Problem")))
+    C e1@--> E["Check Layer 2 Status"]
+    E e1@--> G["No Issues at Layer 2"] & F["Issue found at the Data Link Layer"]
+    F e1@--> I
+    G e1@--> J["Check Layer 3 Status"]
+    J e1@--> L["No Issues at Layer 3"] & K["Issue at the Network Layer Found"]
+    K e1@--> I
+    L e1@--> N["Check Layer 4 Status"]
+    N e1@--> O["No Issues at Layer 4"] & P["Issue found at the Transport Layer"]
+    P e1@--> I
+    O e1@--> H["Check Layer 5 Status"]
+    H e1@--> M{" CONSIDER blaming the End User"}
+    M e1@--> Q@{ label: "Be nice and don't blame the End User" } & R["Blame the End User"]
+    R e1@--> S["Submit Ticket for Help Desk for Investigation"]
+    Q e1@--> T["Issue Found at the Session Layer"] & U["No Issues at Layer 5"]
+    T e1@--> I & V["Notify Help Desk of the Issue and Correction Used"]
+    U e1@--> Y["Check Layer 6 Status"]
+    I e1@--> X["Document actions taken"]
+    Y e1@--> Z["Issue Found at the Presentation Layer"] & AA["No Issue Found at Layer 6"]
+    Z e1@--> I & V
+    AA e1@--> W{{"Issue Falls Outside Net Ops Jurisdiction, Submit Ticket to Help Desk for Investigation"}}
+    W e1@--> X
     n1["OSI Model Network Troubleshooting Flowchart"]
     n2["Assumes there is a limit to Net Ops desire to Troubleshoot. This is only half serious, please take this as unseriously as possible."]
     Q@{ shape: rect}
     n2@{ shape: rect}
+    e1@{ animate: true }
