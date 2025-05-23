@@ -42,4 +42,4 @@ flowchart TB
     n1["OSI Model Network Troubleshooting Flowchart"]
     n2["Assumes there is a limit to Net Ops desire to Troubleshoot. This is only half serious, please take this as unseriously as possible."]
     Q@{ shape: rect}
-    n2@{ shape: text}
+    n2@{ shape: rect}
