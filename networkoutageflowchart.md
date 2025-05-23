@@ -14,8 +14,8 @@
 config:
   theme: redux
 ---
-flowchart TD
-    A(["Network Issue Begins"]) -->> B["Check Layer 1 Status"]
+flowchart TB
+    A(["Network Issue Begins"]) --> B["Check Layer 1 Status"]
     B --> C["No Issues at Layer 1"] & D["Issue found at the Physical Layer"]
     D --> I["Fix the Problem"]
     C --> E["Check Layer 2 Status"]
@@ -28,7 +28,7 @@ flowchart TD
     N --> O["No Issues at Layer 4"] & P["Issue found at the Transport Layer"]
     P --> I
     O --> H["Check Layer 5 Status"]
-    H --> M["Consider blaming the End User"]
+    H --> M[" `_Consider_` blaming the End User"]
     M --> Q@{ label: "Be nice and don't blame the End User" } & R["Blame the End User"]
     R --> S["Submit Ticket for Help Desk for Investigation"]
     Q --> T["Issue Found at the Session Layer"] & U["No Issues at Layer 5"]
