@@ -25,7 +25,7 @@ flowchart TB
     J e7@--> L["No Issues at Layer 3"] & K["Issue at the Network Layer Found"]
     K e8@--> I
     L e9@--> N["Check Layer 4 Status"]
-    N e0@--> O["No Issues at Layer 4"] & P["Issue found at the Transport Layer"]
+    N e10@--> O["No Issues at Layer 4"] & P["Issue found at the Transport Layer"]
     P e11@--> I
     O e12@--> H["Check Layer 5 Status"]
     H e13@--> M{" CONSIDER blaming the End User"}
