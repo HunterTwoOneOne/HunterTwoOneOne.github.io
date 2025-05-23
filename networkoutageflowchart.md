@@ -28,7 +28,7 @@ flowchart TB
     N --> O["No Issues at Layer 4"] & P["Issue found at the Transport Layer"]
     P --> I
     O --> H["Check Layer 5 Status"]
-    H --> M[" ` **Consider** ` blaming the End User"]
+    H --> M[" CONSIDER blaming the End User"]
     M --> Q@{ label: "Be nice and don't blame the End User" } & R["Blame the End User"]
     R --> S["Submit Ticket for Help Desk for Investigation"]
     Q --> T["Issue Found at the Session Layer"] & U["No Issues at Layer 5"]
