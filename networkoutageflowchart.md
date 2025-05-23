@@ -17,7 +17,7 @@ config:
 flowchart TB
     A(["Network Issue Begins"]) --> B["Check Layer 1 Status"]
     B --> C["No Issues at Layer 1"] & D["Issue found at the Physical Layer"]
-    D --> I["Fix the Problem"]
+    D --> I((("Fix the Problem")))
     C --> E["Check Layer 2 Status"]
     E --> G["No Issues at Layer 2"] & F["Issue found at the Data Link Layer"]
     F --> I
