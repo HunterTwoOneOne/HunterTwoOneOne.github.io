@@ -28,7 +28,7 @@ flowchart TB
     N --> O["No Issues at Layer 4"] & P["Issue found at the Transport Layer"]
     P --> I
     O --> H["Check Layer 5 Status"]
-    H --> M[" CONSIDER blaming the End User"]
+    H --> M{" CONSIDER blaming the End User"}
     M --> Q@{ label: "Be nice and don't blame the End User" } & R["Blame the End User"]
     R --> S["Submit Ticket for Help Desk for Investigation"]
     Q --> T["Issue Found at the Session Layer"] & U["No Issues at Layer 5"]
@@ -37,7 +37,7 @@ flowchart TB
     I --> X["Document actions taken"]
     Y --> Z["Issue Found at the Presentation Layer"] & AA["No Issue Found at Layer 6"]
     Z --> I & V
-    AA --> W["Issue Falls Outside Net Ops Jurisdiction, Submit Ticket to Help Desk for Investigation"]
+    AA --> W{{"Issue Falls Outside Net Ops Jurisdiction, Submit Ticket to Help Desk for Investigation"}}
     W --> X
     n1["OSI Model Network Troubleshooting Flowchart"]
     n2["Assumes there is a limit to Net Ops desire to Troubleshoot. This is only half serious, please take this as unseriously as possible."]
