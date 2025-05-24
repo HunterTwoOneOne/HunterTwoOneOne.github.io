@@ -21,6 +21,8 @@ The nathanaellong.com mailbox is not regularly monitored. Please do not expect a
 
 **As a Network professional, this website is an invaluable tool. I tell pretty much everybody who's having issues with their WiFi or Ethernet connections to run a speed test, and this is one of the best. It's very simple to use and reasonably accurate for general quick checks of connectivity to the Internet. Ookla offers more than just their speed test tool as they are also the company behind the <a href="https://downdetector.com/"> Down Detector </a> service. If you're an aspiring Network Technician/Engineer, you can benefit greatly from Ookla's website and mobile App. There's almost no other service that competes with Ookla when it comes to reliability and quality in this niche.**
 
+<H2>Additional Pages I Suggest Checking Out</H2>
+
 <a href="https://steamdb.info/"> Steam DB </a>
 
 **Being as big a fan of gaming as I am, I would be remiss not to put forward one of the best 3rd Party tools in PC gaming, Steam DB. Their offering of player counts is super helpful in checking if an online game has an active playerbase is very helpful, the ability to view upcoming game releases is fantastic, and a they even have a fun little tool to offer a random game you own as a suggestion for what to play. For users deep into modding their games, the ability to find old Depot information to pull an older verion of a game to your machine is invaluable. Everyone who plays games on PC should at least check out Steam DB once.**
