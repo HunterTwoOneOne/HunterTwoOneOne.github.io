@@ -2,7 +2,7 @@
 
 **This is intended to be taken very unseriously. Process is simply to follow the OSI Model from Layer to Layer either finding the issue or not and taking actions based on the findings. Generally, once at the 7th Layer, AKA the Application Layer, the Network Team should be passing along the findings to the Help Desk as this is the Layer that End Users are at. Obviously, if you are fixing this issue in the real world and have troubleshooted the problem all the way to Layer you're probably not going to just give up and pass the problem to the Help Desk, you'll fix it for them and document the findings.**
 
-**Let’s really quick break down the Layers of the OSI Model. This will help if you want to consider the items being checked in the process. This is very simplified and should not be taken as though it is all encompassing.**
+**Let’s really quick break down the Layers of the OSI Model. This will help if you want to consider the items being checked in the process. This is very simplified and should not be taken as though it is all encompassing. Understand that a Switch can exist at multiple layers, as can hardware like a Router or Firewall.**
 
 *Layer 1 deals with Cables and Power States of hardware*
 
