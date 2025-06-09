@@ -16,7 +16,7 @@
 
 [Google](www.google.com)
 
-```mermaid
+```mermaid`
 
 ---
 PB and J
