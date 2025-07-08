@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="LongNumberGuessingGame"/>
+        <attribute name="authors" value="natha"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-07-02 03:29:15 PM"/>
+        <attribute name="created" value="bmF0aGE7SFZDLTAxMi1ST0I7MjAyNS0wNy0wMjswMjozMzo0MSBQTTsyNDg4"/>
+        <attribute name="edited" value="bmF0aGE7SFZDLTAxMi1ST0I7MjAyNS0wNy0wMjswMzoyOToxNSBQTTs5OzI2MTE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Long, Nathanael CTI-110-4136"/>
+            <comment text="A Number Guessing Game.&#13;&#10;&#13;&#10;Test Cases:&#13;&#10;&#13;&#10;Guessing -999 at any point will return the value - Sorry to see you quit, but thank you for playing! and the game will end, but the player will not be prompted to quit with this method until 1 wrong guess has been given.&#13;&#10;&#13;&#10;Guessing wrong will return the following - Sorry, that wasn't right! and told to reguess.&#13;&#10;&#13;&#10;If the guess is correct at any point, the player will be told - That's correct! Thank you for playing!&#13;&#10;&#13;&#10;Test a wrong guess by providing any answer of 11 or higher as the game is not set to select a random number over 10.&#13;&#10;&#13;&#10;Test quitting by giving -999 as the answer right away.&#13;&#10;&#13;&#10;Test a correct answer by opening the Variable Watch Window and inputting the right answer."/>
+            <declare name="RandomRandint" type="Integer" array="False" size=""/>
+            <declare name="PlayerGuessedint" type="Integer" array="False" size=""/>
+            <assign variable="RandomRandint" expression="Random(10)"/>
+            <output expression="&quot;Would you like to play a game?&quot;" newline="True"/>
+            <output expression="&quot;Please guess a number between 0 and 10!&quot;" newline="True"/>
+            <input variable="PlayerGuessedint"/>
+            <while expression="PlayerGuessedint != -999 and PlayerGuessedint &lt;&gt; RandomRandint">
+                <if expression="PlayerGuessedint &gt; 10">
+                    <then>
+                        <output expression="&quot;Please only guess between 0 and 10!&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Sorry, that wasn't right! &quot;" newline="False"/>
+                    </else>
+                </if>
+                <if expression="PlayerGuessedint &gt; RandomRandint">
+                    <then>
+                        <output expression="&quot;You guessed to high!&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="PlayerGuessedint &lt; RandomRandint">
+                            <then>
+                                <output expression="&quot;You guessed to low!&quot;" newline="True"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;If you would like to quit, please enter the guess of -999.&quot;" newline="True"/>
+                <output expression="&quot;If you would like to keep playing, &quot;" newline="False"/>
+                <output expression="&quot;please guess a number between 0 an 10!&quot;" newline="True"/>
+                <input variable="PlayerGuessedint"/>
+            </while>
+            <if expression="PlayerGuessedint = -999">
+                <then>
+                    <output expression="&quot;Sorry to see you quit, but thank you for playing!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;That's correct! Thank you for playing!&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

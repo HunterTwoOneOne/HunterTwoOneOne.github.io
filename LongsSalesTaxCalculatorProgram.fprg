@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="LongsSalesTaxCalculatorProgram"/>
+        <attribute name="authors" value="natha"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-25 03:35:17 PM"/>
+        <attribute name="created" value="bmF0aGE7SFZDLTAxMi1ST0I7MjAyNS0wNi0yNTswMjo1ODoyMSBQTTsyNDk3"/>
+        <attribute name="edited" value="bmF0aGE7SFZDLTAxMi1ST0I7MjAyNS0wNi0yNTswMzozNToxNyBQTTsyOzI2MDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Long, Nathanael CTI-110-4136&#13;&#10;&#13;&#10;A simple Sales Tax Calculator."/>
+            <comment text="Test Cases:&#13;&#10;&#13;&#10;Input 10.99 for the Price&#13;&#10;Input 0.07 as the Sales Tax&#13;&#10;The expected output will be ~11.75&#13;&#10;&#13;&#10;Input 10.10 for the Price&#13;&#10;Input 0.07 as the Sales Tax&#13;&#10;The expected output will be ~10.70&#13;&#10;&#13;&#10;Input 19.99 for the Price&#13;&#10;Input 0.06 as the Sales Tax&#13;&#10;The expected output will be ~21.18&#13;&#10;&#13;&#10;(Please ignore anything after the 2nd decimal place as this is supposed to be money.)"/>
+            <output expression="&quot;Price of Item?&quot;" newline="True"/>
+            <declare name="Price, Tax, TaxtoAdd, FinalPrice" type="Real" array="False" size=""/>
+            <input variable="Price"/>
+            <output expression="&quot;Sales Tax? (0.XX Format)&quot;" newline="True"/>
+            <input variable="Tax"/>
+            <assign variable="TaxtoAdd" expression="Price*Tax"/>
+            <assign variable="FinalPrice" expression="TaxtoAdd+Price"/>
+            <output expression="&quot;Here is the total cost of this item with Tax.&quot;" newline="True"/>
+            <output expression="FinalPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
