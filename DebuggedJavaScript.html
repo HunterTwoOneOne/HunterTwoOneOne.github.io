@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This code was fine as far as I could tell, so I left it alone. It wasn't part of the formula and was purely setting up the page. -->
+
+    <!-- Since the issues were all with the formula, nothing about the webpage's design seemed to need changing. -->
+
+    <!-- I separated the lines for better readability. -->
+     
     <title>Mortgage Calculator</title>
 </head>
 <body>
@@ -33,28 +40,69 @@
     <p id="result"></p>
     
     <script>
+        // The original function was incorrect and would not return a rational value.
 
-        function calculateMortgage() {
-            // Get the initial amount from the principal box
-            const principal = document.getElementById("principal").value;
+        // Checking the original file's results against https://idfpr.illinois.gov/finlit101/calculators/basic-mortgage-payment.html shows that the issue was with the function.
 
-            // update rate from the box
-            const rate = document.getElementById("rate").value / 100;
+        // After checking the illinois.gov calculator, I rewrote the code based on the formula from https://stackoverflow.com/questions/17101442/how-to-calculate-mortgage-in-javascript
 
-            // get the years to calculate
-            const years = document.getElementById("years").value;
+        // The formula used is: monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1)
 
-            // Call the power funtion, pow, from Math
-            const monthlyRate = Math.pow(1 + rate, years * 12);
+        // Using the illinois.gov calculator, you can check for accuracy by using $100 as the Loan Amount, 10% for the Interest Rate, and 10 Years for the Number of Years/Loan Term and expect the result of $1.32 as the Monthly Payment.
+        
+        // Another Test Case is $50 as the Loan Amount, 100% for the Interest Rate, and 5 Year for the Number of Years/Loan Term, which should return $4.20 as the Monthly Payment.
 
-            if (rate === 0) {
-                document.getElementById("result").innerText = "Interest rate cannot be zero.";
-                return;
-            }
+        // As the illinois.gov calculator states, "the monthly payment, principal and interest only, will be returned." and the same is true in this calculator.
 
-            const monthlyPayment = (principal * rate * monthlyRate) / (monthlyRate - 1);
-            document.getElementById("result").innerText = `Your monthly payment is $${monthlyPayment.toFixed(2)}`;
-        }
+        // Using parseFloat, we can ensure that the values are treated as numbers and we will be able to better handle NaN problems, we can leave the majority of the line as it was, since it's just defining what we're using in the formula.
+
+    function calculateMortgage() {
+    // This is for the principal amount box
+    const principal = parseFloat(document.getElementById("principal").value);
+
+    // This is for the interest rate box
+    const rate = parseFloat(document.getElementById("rate").value) / 100;
+
+    // This is for the number of years box
+    const years = parseFloat(document.getElementById("years").value);
+
+    // This is because years * 12 is the number of payments made in a year. 12 Months in a year means you multiply the years by 12 to get the total number of payments.
+    const payments = years * 12;
+
+    // When the interest rate is set to 0, we need to say that this cannot be done. 0% interest means you're paying back the principal amount only, which is not realistic for a mortgage.
+    if (rate === 0) {
+        document.getElementById("result").innerText = "Interest rate cannot be zero.";
+        return;
+    }
+
+    // This was where the formula of the original code was returning wildly incorrect results. Originally, The test case of $100, at 10%, over 10 years would return $10.
+
+    // This was because the formula was wrong. const monthlyRate = Math.pw(1 + rate, years * 12) needed to be .pow for power function.
+
+    // The original code const monthlyPayment = (principal * rate * monthlyRate) / (monthlyRate - 1); was just multiplying all the provided values together.
+
+    // In an effort to be as close to the original code as possible, I tried to not change too much of the names while adding nume and deno (for division that's numerator and denominator)
+
+    // In order, we're determining that monthly rate is the rate divided by 12. 12 Months in a year, as we've stated earlier.
+
+    // Then, we take that monthly rate and multiply it by the power of (1 + monthlyRate) raised to the number of payments using the power function Math.pow to get nume (Our numerator).
+
+    // We then use the power function again by taking (1 + monthlyRate) raised to the number of payments and subtracting 1 to get deno (Our denominator).
+
+    // Finishing it out, we now can get the monthly payment by multiplying the principal by the numerator divided it by the denominator (nume / deno).
+
+    // This gives us the value we display as 'Your monthly payment is $X.XX' where the $X.XX is the monthly payment rounded to two decimal places since it is a currency and not a random number.
+
+    // Once again, the formula we needed is: monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1)
+
+    const monthlyRate = rate / 12;
+    const nume = monthlyRate * Math.pow(1 + monthlyRate, payments);
+    const deno = Math.pow(1 + monthlyRate, payments) - 1;
+    const monthlyPayment = principal * (nume / deno);
+
+    document.getElementById("result").innerText = 
+        `Your monthly payment is $${monthlyPayment.toFixed(2)}`;
+    }
     </script>
 </body>
 </html>
