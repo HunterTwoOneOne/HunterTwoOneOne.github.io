@@ -8,11 +8,14 @@
 
     <!-- Since the issues were all with the formula, nothing about the webpage's design seemed to need changing. -->
 
-    <!-- I separated the lines for better readability. -->
+    <!-- If we wanted to change this though, we could try and work with the form's input to prevent a thousandths place decimal as money is only 2 decimal places, not three. Restricting this input isn't critical as the calculation doesn't care about additional decimal places. -->
+
+    <!-- I separated the lines pretty much everywhere for better readability. -->
      
     <title>Mortgage Calculator</title>
 </head>
 <body>
+
     <h1>Mortgage Calculator</h1>
     <form id="mortgageForm">
         <table>
@@ -40,13 +43,15 @@
     <p id="result"></p>
     
     <script>
+        // <(-, _ -,)> This part makes ASCII face guy sad, because he does not like math as it is, and this is basically all math.
+
         // The original function was incorrect and would not return a rational value.
 
-        // Checking the original file's results against https://idfpr.illinois.gov/finlit101/calculators/basic-mortgage-payment.html shows that the issue was with the function.
+        // The formula we need is: m = p * r(1+r)^n / (1+r)^n -1)
 
-        // After checking the illinois.gov calculator, I rewrote the code based on the formula from https://stackoverflow.com/questions/17101442/how-to-calculate-mortgage-in-javascript
+        // We will be translating that into - monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1)
 
-        // The formula used is: monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1)
+        // Checking the original file's results against https://idfpr.illinois.gov/finlit101/calculators/basic-mortgage-payment.html shows that the issue was definitely with the function.
 
         // Using the illinois.gov calculator, you can check for accuracy by using $100 as the Loan Amount, 10% for the Interest Rate, and 10 Years for the Number of Years/Loan Term and expect the result of $1.32 as the Monthly Payment.
         
@@ -57,20 +62,23 @@
         // Using parseFloat, we can ensure that the values are treated as numbers and we will be able to better handle NaN problems, we can leave the majority of the line as it was, since it's just defining what we're using in the formula.
 
     function calculateMortgage() {
-    // This is for the principal amount box
+
+    // This is for the principal/loan amount box
     const principal = parseFloat(document.getElementById("principal").value);
 
     // This is for the interest rate box
     const rate = parseFloat(document.getElementById("rate").value) / 100;
-
-    // This is for the number of years box
+        
+    // This is for the number of years/loan term box
     const years = parseFloat(document.getElementById("years").value);
 
-    // This is because years * 12 is the number of payments made in a year. 12 Months in a year means you multiply the years by 12 to get the total number of payments.
-    const payments = years * 12;
+    // Those three lines now give us the basic inputs we needed for the boxes we set up earlier in a way we can use.
 
     // When the interest rate is set to 0, we need to say that this cannot be done. 0% interest means you're paying back the principal amount only, which is not realistic for a mortgage.
+
+    // This could be written better in my opinion. Rather than just printing 'Interest rate cannot be zero.' This could be changed into a pop up, stopping the user and preventing them from trying to calculate a mortgage with 0% interest.
     if (rate === 0) {
+        // alert("Interest rate cannot be zero."); is the line we could replace the document.getElementById("result").innerText = "Interest rate cannot be zero." line with to create a popup should we want to do that instead.
         document.getElementById("result").innerText = "Interest rate cannot be zero.";
         return;
     }
@@ -79,30 +87,34 @@
 
     // This was because the formula was wrong. const monthlyRate = Math.pw(1 + rate, years * 12) needed to be .pow for power function.
 
-    // The original code const monthlyPayment = (principal * rate * monthlyRate) / (monthlyRate - 1); was just multiplying all the provided values together.
+    // The original code const monthlyPayment = (principal * rate * monthlyRate) / (monthlyRate - 1); was effectively just multiplying all the provided values together.
 
-    // In an effort to be as close to the original code as possible, I tried to not change too much of the names while adding nume and deno (for division that's numerator and denominator)
+    // We need 1 + and - 1 becasue the mortgage is using compound interest, something the original code was not properly calculating due to having a bad formula. As established, it needed to be m = p * r(1+r)^n / (1+r)^n -1)
 
-    // In order, we're determining that monthly rate is the rate divided by 12. 12 Months in a year, as we've stated earlier.
+    // In an effort to be as close to the original code as possible, I tried to not change too much of the names while adding nume and deno (for division that's numerator and denominator but shorthanded because I miss the Cisco CLI).
 
-    // Then, we take that monthly rate and multiply it by the power of (1 + monthlyRate) raised to the number of payments using the power function Math.pow to get nume (Our numerator).
-
-    // We then use the power function again by taking (1 + monthlyRate) raised to the number of payments and subtracting 1 to get deno (Our denominator).
-
-    // Finishing it out, we now can get the monthly payment by multiplying the principal by the numerator divided it by the denominator (nume / deno).
-
-    // This gives us the value we display as 'Your monthly payment is $X.XX' where the $X.XX is the monthly payment rounded to two decimal places since it is a currency and not a random number.
-
-    // Once again, the formula we needed is: monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1)
-
+        // We need to establish the monthly rate by taking the interest rate and dividing it by 12. (12 Months in a year as we are working in real world terms and not just contextless numbers.)
     const monthlyRate = rate / 12;
+
+        // We need to establish the number of payments. That's just the years for the loan multiplied by 12. (12 again for the same reason as with monthlyRate.)
+    const payments = years * 12;
+
+        // We take the monthlyRate and multiply it by the power of (1 + monthlyRate) raised to the number of payments using the power function Math.pow to get nume (Our numerator).
     const nume = monthlyRate * Math.pow(1 + monthlyRate, payments);
+
+        // We then use the power function again by taking (1 + monthlyRate) raised to the number of payments and subtracting 1 to get deno (Our denominator).
     const deno = Math.pow(1 + monthlyRate, payments) - 1;
+
+        // Finishing it out, we now can get the monthly payment by multiplying the principal by the numerator we set up divided by the denominator we've determined (nume / deno).
     const monthlyPayment = principal * (nume / deno);
 
-    document.getElementById("result").innerText = 
-        `Your monthly payment is $${monthlyPayment.toFixed(2)}`;
+        // This gives us the value we display as 'Your monthly payment is $X.XX' where the $X.XX is the monthly payment rounded to two decimal places since it is a currency and not a random number. The rounding is from the / 100 in the rate line.
+
+    // This is the part where we display the information that the function has calculated to the user. Nothing was wrong here, so it's the same as it was in the original.
+    document.getElementById("result").innerText = `Your monthly payment is $${monthlyPayment.toFixed(2)}`;
     }
+
+    // <(^ u ^)> ASCII face guy is happy now because we don't need to do any more math related anything in this file. Huzzah! 
     </script>
 </body>
 </html>
