@@ -16,12 +16,12 @@ function fetchGradebookData() {
       
       // Check if we're successful
       if (xhr.status != 200) {
-        console.error('Could not get grades. Status: ${xhr.status}');
+        console.error(`Could not get grades. Status: ${xhr.status}`);
         return;
       }
       
       // And then call the function to update the HTML with our data
-      populateGradebookTable;(JSON.parse(xhr.responseText));
+      populateGradebookTable(JSON.parse(xhr.responseText));
     }
   }.bind(this);
   
@@ -32,9 +32,9 @@ function fetchGradebookData() {
 function populateGradebookTable(Data) {
     console.log("Populating gradebook with data:", Data);
 
-     let tableElm = document.getElementById("gradebook"); // Get the gradebook table element data?
+     let tableElm = document.getElementById("gradebook"); // Get the gradebook table element
 
-  forEach(function(assignment) { // For each row of data we're passed in
+  Data.forEach(function(assignment) { // For each row of data we're passed in
     let row = document.createElement("tr"); // create a table row element
     let columns = []; // Handy place to stick the columns of information
 

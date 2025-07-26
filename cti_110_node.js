@@ -1,4 +1,3 @@
-
 // This section loads modules.  It loads the Express server and stores
 // it in "express", then creates a application, a router, and a path handler
 const express = require('express');
@@ -9,7 +8,7 @@ const path = require('path');
 // This part sets up the database
 const {Pool} = require('pg');
 // You may need to modify the password or database name in the following line:
-const connectionString = `postgres://postgres:8869@localhost/Gradebook`;
+const connectionString = "postgres://postgres:8869@localhost/Gradebook";
 // The default password is CTI_110_WakeTech, I changed it.
 // The default database name is Gradebook
 const pool = new Pool({connectionString:connectionString})
@@ -28,30 +27,29 @@ router.get('/', function(req, res){
 
 app.use("/", router);
 
-router.get('/api/grades',function(req, res){
+router.get('/api/grades', function(req, res) {
     pool.query(
-        `SELECT Students.student_id, first_name, last_name, AVG(assignments.grade) as total_grade \
-            FROM Students  \
-            LEFT JOIN Assignment ON Assignment.student_id = Students.student_id \
-            GROUP BY Students.student_id \
-            ORDER BY total_grade DESC`,
-        [],
-        function( err, result){
-            if(err)
-            {
-                console.error(err);
-            }
-            
-            result.rows.forEach( 
-                    function(row){
-                        console.log(`Student Name: ${row.first_name} ${row.last_name}`);
-                        console.log(`Grade: ${row.total_grade}`);
-                    }
-            ); // End of forEach
-            
-            res.status(200).json(result.rows);
+    `SELECT Students.student_id, first_name, last_name, AVG(Assignment.grade) as total_grade
+     FROM Students
+     LEFT JOIN Assignment ON Assignment.student_id = Students.student_id
+     GROUP BY Students.student_id, first_name, last_name
+     ORDER BY total_grade DESC`,
+    [],
+    function(err, result) {
+        if (err) {
+            console.error("Database query error:", err);
+            res.status(500).send("Database error");
+            return;
         }
-    );
+
+        result.rows.forEach(function(row) {
+            console.log(`Student Name: ${row.first_name} ${row.last_name}`);
+            console.log(`Grade: ${row.total_grade}`);
+        });
+
+        res.status(200).json(result.rows);
+    }
+);
 });
 
 let server = app.listen(3000, function(){
