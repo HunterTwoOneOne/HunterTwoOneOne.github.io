@@ -16,12 +16,12 @@ function fetchGradebookData() {
       
       // Check if we're successful
       if (xhr.status != 200) {
-        console.error(`Could not get grades. Status: ${xhr.status}`);
+        console.error('Could not get grades. Status: ${xhr.status}');
         return;
       }
       
       // And then call the function to update the HTML with our data
-      populateGradebook(JSON.parse(xhr.responseText));
+      populateGradebookTable;(JSON.parse(xhr.responseText));
     }
   }.bind(this);
   
@@ -32,15 +32,16 @@ function fetchGradebookData() {
 function populateGradebookTable(Data) {
     console.log("Populating gradebook with data:", Data);
 
-     let tableElm = document.getElementById("gradebook"); // Get the gradebook table element
+     let tableElm = document.getElementById("gradebook"); // Get the gradebook table element data?
 
-  data.forEach(function(assignment) { // For each row of data we're passed in
+  forEach(function(assignment) { // For each row of data we're passed in
     let row = document.createElement("tr"); // create a table row element
     let columns = []; // Handy place to stick the columns of information
 
     columns.name = document.createElement('td'); // The first column's table data will be the name
     columns.name.appendChild(
       // Concatenate the full name: "last_name, first_name"
+
       document.createTextNode(assignment.last_name + ", " + assignment.first_name)
     );
 
@@ -48,6 +49,7 @@ function populateGradebookTable(Data) {
     columns.grade.appendChild(
       // Just put the name in text, you could be fancy and figure out the letter grade here
       // with either a bunch of conditions, or a JavaScript "switch" statement
+
       document.createTextNode(assignment.total_grade)
     );
 
