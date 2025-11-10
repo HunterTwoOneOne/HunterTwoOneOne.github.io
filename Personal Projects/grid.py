@@ -27,5 +27,7 @@ for y in range(height):
         else:
             pixels[x, y] = gray
 
+print(pixels)
+
 img = img.resize((2000, 1500), resample=Image.NEAREST)
 img.save("grid.png")
